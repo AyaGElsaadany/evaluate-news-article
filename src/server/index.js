@@ -23,7 +23,7 @@ app.use(bodyParser.urlencoded({
   }))
 
 // Configure express static directory.
-app.use(express.static('dist'))
+app.use(express.static(__dirname))
 
 app.get('/', function (req, res) {
     //res.sendFile('dist/index.html')
