@@ -1,3 +1,4 @@
+import fetch from 'cross-fetch';
 import {checkURL} from './checkURL'
 
 function handleForm(e){
@@ -13,7 +14,8 @@ function handleForm(e){
 
     if(Client.checkURL(URLInput)){
         console.log("::: Form Submitted :::")
-        postData("http://localhost:8081/article", {url: URLInput})
+
+        postData("http://localhost:8081/api", {url: URLInput})
         .then((res) => {
             text.innerHTML = "Text: " + res.sentence_list[0].text;
             agreement.innerHTML = "Agreement: " + res.agreement;
